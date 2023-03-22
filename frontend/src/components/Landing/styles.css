@@ -1,0 +1,45 @@
+.plus.pillar-background{
+    background-color: #212529;
+    background: radial-gradient(circle, transparent 20%, #212529 20%, #212529 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #212529 20%, #212529 80%, transparent 80%, transparent) 35px 35px, linear-gradient(#DCFF7D 2.8000000000000003px, transparent 2.8000000000000003px) 0 -1.4000000000000001px, linear-gradient(90deg, #DCFF7D 2.8000000000000003px, #212529 2.8000000000000003px) -1.4000000000000001px 0;
+    background-size: 70px 70px, 70px 70px, 35px 35px, 35px 35px;
+}
+.geometric.pillar-background{
+    background-size: 0%;
+    background-color: #212529;
+    background-image:  linear-gradient(30deg, #DCFF7D 12%, transparent 12.5%, transparent 87%, #DCFF7D 87.5%, #DCFF7D), linear-gradient(150deg, #DCFF7D 12%, transparent 12.5%, transparent 87%, #DCFF7D 87.5%, #DCFF7D), linear-gradient(30deg, #DCFF7D 12%, transparent 12.5%, transparent 87%, #DCFF7D 87.5%, #DCFF7D), linear-gradient(150deg, #DCFF7D 12%, transparent 12.5%, transparent 87%, #DCFF7D 87.5%, #DCFF7D), linear-gradient(60deg, #DCFF7D77 25%, transparent 25.5%, transparent 75%, #DCFF7D77 75%, #DCFF7D77), linear-gradient(60deg, #DCFF7D77 25%, transparent 25.5%, transparent 75%, #DCFF7D77 75%, #DCFF7D77);
+    background-size: 28px 49px;
+    background-position: 0 0, 0 0, 14px 25px, 14px 25px, 0 0, 14px 25px;
+}
+.linear.pillar-background{
+    background-color: #212529;
+    background: repeating-linear-gradient( 45deg, #DCFF7D, #DCFF7D 7px, #212529 7px, #212529 35px );
+}
+.zig-zag.pillar-background{
+    background-size: 0%;
+    background-color: #212529;
+    background: linear-gradient(135deg, #DCFF7D55 25%, transparent 25%) -14px 0/ 28px 28px, linear-gradient(225deg, #DCFF7D 25%, transparent 25%) -14px 0/ 28px 28px, linear-gradient(315deg, #DCFF7D55 25%, transparent 25%) 0px 0/ 28px 28px, linear-gradient(45deg, #DCFF7D 25%, #212529 25%) 0px 0/ 28px 28px;
+}
+.pillar-background{
+    transition: 1s ease;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+
+}
+.pillar-box{
+    position: relative;
+    cursor:pointer;
+
+
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+}
+.pillar-box:hover .pillar-background{
+
+    opacity: 1;
+}
