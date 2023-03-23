@@ -53,7 +53,6 @@ export const Intro = () => {
             <div className='tiles__line-img' style={{ backgroundImage: `url(${img1})` }} />
           </div>
         </div>
-        <h2 className='tiles__title'>Contrasts</h2>
       </div>
       <div className='scrolling-content'>
         <p className='content__text content__text--centered' data-scroll='' data-scroll-speed='4'>

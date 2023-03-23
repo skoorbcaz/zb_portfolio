@@ -1,6 +1,6 @@
-.resume h2, .resume h3 , .resume h4 ,  .resume h5 , .resume h6 {
+.resume h2, .resume h3 , .resume h4 ,  .resume h5 , .resume h6, .resume p {
     font-family: 'Lato' ;
-    color:'pink';
+
 }
 .resume h2{
     letter-spacing: 0.20em;
@@ -22,11 +22,15 @@
 
 }
 .resume h6{
-    font-size: 0.95em;
+    font-size: 0.9em;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.15em;
 
+}
+.resume h6.light{
+    font-weight: 300;
+    font-size:0.8em;
 }
 .resume p{
     font-size: 0.9em;

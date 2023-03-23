@@ -16,7 +16,7 @@ export const Portfolio = () => {
     setupAnimation(setCurrentSlideIndex, setInfiniteIndex)
   }, [])
   return (
-    <main>
+    <div className='content-container'>
       <div className='frame'>
         <SlideLinks infiniteIndex={infiniteIndex} />
         <button className='frame__back unbutton'>
@@ -29,7 +29,7 @@ export const Portfolio = () => {
           <SingleSlide key={slide.title} currentSlideIndex={currentSlideIndex} slide={slide} />
         ))}
       </div>
-    </main>
+    </div>
   )
 }
 
@@ -61,7 +61,9 @@ const SingleSlide = ({ slide }) => {
               </Flex>
             </div>
           </VStack>
-          <div className='slide__img-inner' style={{ backgroundImage: `url(${slideImg})`, flex: 2, width: '40vw' }} />
+          <div className='slide-wrapper'>
+            <div className='slide__img-inner' style={{ backgroundImage: `url(${slideImg})`, flex: 2, width: '40vw' }} />
+          </div>
         </div>
       </div>
     </div>

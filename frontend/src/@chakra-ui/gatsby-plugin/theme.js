@@ -8,7 +8,7 @@ const theme = {
   },
   fonts: {
     heading: `'YuMincho', sans-serif`,
-    body: `'.SF NS Rounded', sans-serif`,
+    body: `'Assistant', sans-serif`,
   },
   config: {
     initialColorMode: 'dark',

@@ -4,7 +4,7 @@
  *
  * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
  */
-
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import { Box, Container, Flex, Grid, GridItem, Heading, Text } from '@chakra-ui/react'
 import './layout.css'
 import { graphql, Link, useStaticQuery } from 'gatsby'
@@ -31,7 +31,7 @@ function Layout({ children }) {
   return (
     <Container maxW='100vw' h='100vh' px={0}>
       <Header />
-      <Box className='content'>{children}</Box>
+      <Box>{children}</Box>
       <div className='menu'>
         <div className='menu__content-wrap'>
           <div className='menu__content'>
@@ -56,8 +56,8 @@ function Layout({ children }) {
                   <SocialLinks />
                 </GridItem>
                 <GridItem colSpan={2} rowSpan={1} display='flex' alignItems='center'>
-                  <SmallNavLink url='contact' title='/Contact' index={5} />
-                  <SmallNavLink url='resume' title='/Resume' index={6} />
+                  <SmallNavLink url='/contact' title='Contact' index={5} />
+                  <SmallNavLink url='/resume' title='Resume' index={6} />
                 </GridItem>
               </Grid>
             </nav>
@@ -95,12 +95,14 @@ const SocialLinks = () => {
 const LargeNavLink = ({ title, index, url }) => {
   return (
     <Flex>
-      <Flex flex='0 1 50px' flexDir='column' justifyContent='flex-end'>
+      <Flex flex='0 1 50px' flexDir='column' mb='3' justifyContent='flex-end'>
         <Text color='gray.500'>{index}</Text>
       </Flex>
-      <Flex flex='0' flexDir='column'>
-        <Heading color='gray.300' fontWeight={500} size='4xl' className='line-link'>
-          <Link to={url}>{title}</Link>
+      <Flex overflow='hidden' flex='1' flexDir='column'>
+        <Heading color='gray.200' pb='2' mb='3' fontWeight={500} size='4xl' className='line-link menu__tagline'>
+          <AniLink swipe direction='up' to={url}>
+            {title}
+          </AniLink>
         </Heading>
       </Flex>
     </Flex>
@@ -112,7 +114,7 @@ const SmallNavLink = ({ title, index, url }) => {
       <Text mb={3} color='gray.500'>
         {index}
       </Text>
-      <Heading size='2xl' color='gray.300' fontWeight={500} className='line-link menu__tagline'>
+      <Heading overflow='hidden' size='2xl' color='gray.200' fontWeight={500} className='line-link menu__tagline'>
         <Link to={url}>{title}</Link>
       </Heading>
     </Flex>

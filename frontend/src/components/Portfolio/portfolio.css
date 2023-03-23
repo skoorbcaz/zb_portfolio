@@ -1,6 +1,6 @@
 
 
-body {
+body:has(.slides) {
     margin: 0;
 
     -webkit-font-smoothing: antialiased;
@@ -121,7 +121,8 @@ a:focus-visible {
     position: relative;
     transition: color 0.3s;
     pointer-events: auto;
-    font-size: 0.9em;
+    font-size: 1.3em;
+    font-weight: 600;
 }
 
 .frame__nav-button:not(.frame__nav-button--current) {
