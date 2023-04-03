@@ -230,7 +230,10 @@ export const TextExamples1 = () => {
         </div>
         <div className='content'>
           <h2 className='content__title' data-splitting='' data-effect11=''>
-            <span className='font-3 font-height'>The Routine</span>
+            <span className='font-3 font-height' style={{ fontSize: '40pt' }}>
+              Hi, I'm Zac Brooks. I originally planned on just being a software engineer. but then I also got a taste of
+              the creative ecstasy of branding and UI design.
+            </span>
           </h2>
         </div>
         <div className='content'>

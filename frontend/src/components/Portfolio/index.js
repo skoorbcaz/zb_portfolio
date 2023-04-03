@@ -1,6 +1,6 @@
 import 'splitting/dist/splitting.css'
 import 'splitting/dist/splitting-cells.css'
-
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import './portfolio.css'
 import React, { useLayoutEffect, useMemo, useState } from 'react'
 import { VStack, Text, Flex, Box } from '@chakra-ui/react'
@@ -47,9 +47,11 @@ const SingleSlide = ({ slide }) => {
                 teaching engineering teams to raise the bar.
               </Text>
               <Flex className='details-link' alignItems='center' mt={5} pt={10}>
-                <Text color={isLightMode ? 'gray.600' : 'gray.200'} textDecoration='none' fontSize='1.2em'>
-                  Open Case Study
-                </Text>
+                <AniLink onClick={(e) => e.stopPropagation()} paintDrip to='/portfolio-detail'>
+                  <Text color={isLightMode ? 'gray.600' : 'gray.200'} textDecoration='none' fontSize='1.2em'>
+                    Open Case Study
+                  </Text>
+                </AniLink>
                 <div
                   style={{
                     height: 2,

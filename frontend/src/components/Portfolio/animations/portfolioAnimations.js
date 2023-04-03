@@ -20,7 +20,8 @@ export const setupAnimation = (setCurrentSlideIndex, setInfiniteIndex) => {
     hamburgerInner: document.querySelector('.hamburger-inner'),
     logoStroke1: document.querySelector('#logoStroke1'),
     logoStroke2: document.querySelector('#logoStroke2'),
-    navBanner: document.querySelector('.nav-banner'),
+    menuNav: document.querySelector('.menu__nav-content'),
+    //navBanner: document.querySelector('.nav-banner'),
   }
 
   // total number of slides
@@ -47,8 +48,9 @@ export const setupAnimation = (setCurrentSlideIndex, setInfiniteIndex) => {
       : 'var(--chakra-colors-gray-100)'
     slidesArr[current].DOM.el.classList.add('slide--current')
     DOM.ZBContainer.style.background = slides[current % slides.length].brandColor
-    DOM.navBanner.style.background = slides[current % slides.length].brandColor
-    DOM.menuIcons.forEach((icon) => (icon.style.color = textColor))
+    DOM.menuNav.style.background = slides[current % slides.length].brandColor
+    // DOM.navBanner.style.background = slides[current % slides.length].brandColor
+    DOM.menuIcons.forEach((icon) => (icon.style.color = slides[current % slides.length].logoStroke))
     DOM.logoStroke1.style.stroke = slides[current % slides.length].logoStroke
     DOM.logoStroke2.style.stroke = slides[current % slides.length].logoStroke
     if (slides[current % slides.length].isLightMode) {
@@ -90,10 +92,11 @@ export const setupAnimation = (setCurrentSlideIndex, setInfiniteIndex) => {
       ? 'var(--chakra-colors-gray-600)'
       : 'var(--chakra-colors-gray-100)'
     DOM.ZBContainer.style.background = slides[current % slides.length].brandColor
-    DOM.navBanner.style.background = slides[current % slides.length].brandColor
+    DOM.menuNav.style.background = slides[current % slides.length].brandColor
+    // DOM.navBanner.style.background = slides[current % slides.length].brandColor
     DOM.logoStroke1.style.stroke = slides[current % slides.length].logoStroke
     DOM.logoStroke2.style.stroke = slides[current % slides.length].logoStroke
-    DOM.menuIcons.forEach((icon) => (icon.style.color = textColor))
+    DOM.menuIcons.forEach((icon) => (icon.style.color = slides[current % slides.length].logoStroke))
     if (slides[current % slides.length].isLightMode) {
       DOM.hamburgerInner.classList.add('light')
     } else {

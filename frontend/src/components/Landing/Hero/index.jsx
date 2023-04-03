@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, GridItem, Heading, Highlight, Text, VStack } from '@chakra-ui/react'
+import { Box, Flex, Grid, GridItem, Heading, Highlight, Text, Center } from '@chakra-ui/react'
 import { DotBackground } from '../DotBackground'
 import gravitateLogo from '../../../images/GRAVITATE.svg'
 import * as React from 'react'
@@ -20,10 +20,13 @@ export const Hero = () => {
           <DotBackground />
         </div>
         <Flex direction='column' height='100%'>
-          <VStack p={4} px={50} pt={300} flex='1' alignItems='flex-start'>
+          <Center p={4} px={50} flex='1' alignItems='flex-start' flexDirection='column'>
             <Heading className='hero-header' mb={3} pb={3} size='xl' lineHeight='1.2em' fontWeight={600}>
-              <Highlight query={['frontend developer', 'designer']} styles={{ px: '1', py: '1', color: 'brand.500' }}>
-                I’m Zac Brooks, a creative frontend developer and multi-disciplinary designer.
+              <Highlight
+                query={['designing and engineering', 'simplify complex problems']}
+                styles={{ px: '1', py: '1', color: 'brand.500' }}
+              >
+                My passion is designing and engineering user-beloved software products that simplify complex problems.
               </Highlight>
             </Heading>
             <Text mt={5} fontSize='l'>
@@ -36,7 +39,7 @@ export const Hero = () => {
               </Text>
               <div style={{ height: 2, background: 'white', width: '8vw', marginLeft: '2em' }} />
             </Flex>
-          </VStack>
+          </Center>
           <Box p={3} m={0} bg='brand.500' w={500}>
             <Flex flex='1' alignItems='center' justifyContent='space-between'>
               <Flex alignItems='center'>

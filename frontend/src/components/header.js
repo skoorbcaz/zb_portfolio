@@ -1,63 +1,73 @@
 import * as React from 'react'
-import { Box, Center, Flex, VStack } from '@chakra-ui/react'
+import { Box, Center, Flex, Text, VStack } from '@chakra-ui/react'
 import { Icon } from '@chakra-ui/icons'
 import { AiFillDribbbleCircle, AiFillLinkedin, BsBehance, TbMenu } from 'react-icons/all'
 import Marquee from 'react-fast-marquee'
 
 const Header = ({ siteTitle }) => (
-  <Flex style={{ position: 'fixed', zIndex: 101 }} width='100%'>
-    <VStack my={3} mx={3} spacing={6} width='50px'>
-      <Box>
-        <div className='hamburger hamburger--spin'>
-          <div className='hamburger-box'>
-            <div className='hamburger-inner'></div>
+  <Box
+    p={4}
+    style={{
+      position: 'fixed',
+      zIndex: 101,
+
+      transition: '2s ease',
+    }}
+    width='100vw'
+  >
+    <Flex style={{ borderRadius: 30, transition: '2s ease' }} bg='#2E2E2E' className='brand-square'>
+      <Flex alignItems='center' spacing={6}>
+        <Center mt={2} mx={3}>
+          <div className='hamburger hamburger--spin'>
+            <div className='hamburger-box'>
+              <div className='hamburger-inner'></div>
+            </div>
           </div>
-        </div>
-      </Box>
-      <Box>
-        <Icon className='menu-icon' w={5} h={5} as={AiFillLinkedin} />
-      </Box>
-      <Box>
-        <Icon className='menu-icon' w={5} h={5} as={BsBehance} />
-      </Box>
-      <Box>
-        <Icon className='menu-icon' w={5} h={5} as={AiFillDribbbleCircle} />
-      </Box>
-    </VStack>
-    <Center
-      style={{ borderBottomRightRadius: 5, borderBottomLeftRadius: 5, transition: '2s ease' }}
-      p={4}
-      bg='brand.500'
-      width={100}
-      height={200}
-      className='brand-square'
-    >
-      <Logo stroke='#212529' width={150} height={150} />
-    </Center>
-    <Flex flex='1' style={{ marginLeft: -15, minWidth: 0 }}>
-      <Box className='nav-banner' bg='brand.500' overflow='hidden' height={200} width='0px'>
-        <Marquee
-          style={{
-            color: 'var(--chakra-colors-gray-600)',
-            fontSize: '144pt',
-            maxHeight: '100%',
-            textTransform: 'uppercase',
-            fontWeight: 'bold',
-            opacity: 0.5,
-          }}
-          delay={1.5}
-          speed={150}
-          gradient={false}
-        >
-          The next big thing is the one that makes the last big thing unusable.
-        </Marquee>
-      </Box>
+        </Center>
+      </Flex>
+      <Center m={1} style={{ flex: 1 }}>
+        <Logo stroke='white' width={20} height={20} />
+      </Center>
+      <Flex alignItems='center' pr='5' spacing={6}>
+        <Center mr={3}>
+          <Icon className='menu-icon' w={5} h={5} as={AiFillLinkedin} />
+        </Center>
+        <Center mr={3}>
+          <Icon className='menu-icon' w={5} h={5} as={BsBehance} />
+        </Center>
+        <Center mr={3}>
+          <Icon className='menu-icon' w={5} h={5} as={AiFillDribbbleCircle} />
+        </Center>
+        <Text className='menu-icon' fontWeight={600} mx={3}>
+          {' '}
+          contact
+        </Text>
+      </Flex>
+      {/*<Flex flex='1' style={{ marginLeft: -15, minWidth: 0 }}>*/}
+      {/*  <Box className='nav-banner' bg='brand.500' overflow='hidden' height={200} width='0px'>*/}
+      {/*    <Marquee*/}
+      {/*      style={{*/}
+      {/*        color: 'var(--chakra-colors-gray-600)',*/}
+      {/*        fontSize: '144pt',*/}
+      {/*        maxHeight: '100%',*/}
+      {/*        textTransform: 'uppercase',*/}
+      {/*        fontWeight: 'bold',*/}
+      {/*        opacity: 0.5,*/}
+      {/*      }}*/}
+      {/*      delay={1.5}*/}
+      {/*      speed={150}*/}
+      {/*      gradient={false}*/}
+      {/*    >*/}
+      {/*      The next big thing is the one that makes the last big thing unusable.*/}
+      {/*    </Marquee>*/}
+      {/*  </Box>*/}
+      {/*</Flex>*/}
     </Flex>
-  </Flex>
+  </Box>
 )
 const Logo = (props) => {
   return (
-    <svg width='69' height='75' viewBox='0 0 69 75' fill='none' xmlns='http://www.w3.org/2000/svg'>
+    <svg width='40' height='40' viewBox='0 0 69 75' fill='none' xmlns='http://www.w3.org/2000/svg'>
       <mask
         id='path-1-outside-1_301_21'
         maskUnits='userSpaceOnUse'

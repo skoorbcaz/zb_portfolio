@@ -9,7 +9,7 @@ import { Box, Container, Flex, Grid, GridItem, Heading, Text } from '@chakra-ui/
 import './layout.css'
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import * as React from 'react'
-
+import menuBG from '../images/menu-bg.jpg'
 import Header from './header'
 import { gsap } from 'gsap'
 import { useLayoutEffect } from 'react'
@@ -29,24 +29,28 @@ function Layout({ children }) {
     setupAnimation()
   }, [])
   return (
-    <Container maxW='100vw' h='100vh' px={0}>
+    <>
       <Header />
       <Box>{children}</Box>
+
       <div className='menu'>
+        <div className='cover-wrap' aria-hidden='true'>
+          <div className='cover'>
+            <div className='cover__inner' style={{ background: `url(${menuBG}) 0% 0% / cover no-repeat` }}></div>
+          </div>
+        </div>
         <div className='menu__content-wrap'>
           <div className='menu__content'>
             <nav className='menu__nav-content'>
-              <Grid templateRows='repeat(5, 1fr)' templateColumns='repeat(3, 1fr)' gap={4} width='100%' px='5vw'>
-                <GridItem
-                  rowSpan={4}
-                  colSpan={2}
-                  display='flex'
-                  flexDir='column'
-                  justifyContent='space-around'
-                  borderBotttom='1px'
-                  borderBottomColor='gray.300'
-                  borderBottomWidth='1px'
-                >
+              <Grid
+                templateRows='repeat(5, 1fr)'
+                templateColumns='repeat(3, 1fr)'
+                gap={4}
+                width='100%'
+                style={{ padding: '2em 6em' }}
+                px='5vw'
+              >
+                <GridItem rowSpan={4} colSpan={2} display='flex' flexDir='column' justifyContent='space-around'>
                   <LargeNavLink title='Home' url='/' index={1} />
                   <LargeNavLink title='Portfolio' url='/portfolio' index={2} />
                   <LargeNavLink title='About Me' url='/about' index={3} />
@@ -64,7 +68,7 @@ function Layout({ children }) {
           </div>
         </div>
       </div>
-    </Container>
+    </>
   )
 }
 const SocialLinks = () => {
@@ -96,10 +100,12 @@ const LargeNavLink = ({ title, index, url }) => {
   return (
     <Flex>
       <Flex flex='0 1 50px' flexDir='column' mb='3' justifyContent='flex-end'>
-        <Text color='gray.500'>{index}</Text>
+        <Text className='menu-icon' color='gray.500'>
+          {index}
+        </Text>
       </Flex>
       <Flex overflow='hidden' flex='1' flexDir='column'>
-        <Heading color='gray.200' pb='2' mb='3' fontWeight={500} size='4xl' className='line-link menu__tagline'>
+        <Heading color='gray.200' pb='2' mb='3' fontWeight={500} size='3xl' className='line-link menu__tagline'>
           <AniLink swipe direction='up' to={url}>
             {title}
           </AniLink>
@@ -111,10 +117,10 @@ const LargeNavLink = ({ title, index, url }) => {
 const SmallNavLink = ({ title, index, url }) => {
   return (
     <Flex flexDir='column' flex='1'>
-      <Text mb={3} color='gray.500'>
+      <Text className='menu-icon' mb={3} color='gray.500'>
         {index}
       </Text>
-      <Heading overflow='hidden' size='2xl' color='gray.200' fontWeight={500} className='line-link menu__tagline'>
+      <Heading overflow='hidden' size='xl' color='gray.200' fontWeight={500} className='line-link menu__tagline'>
         <Link to={url}>{title}</Link>
       </Heading>
     </Flex>
@@ -179,9 +185,10 @@ const setupAnimation = () => {
       DOM.cover.wrap,
       {
         duration: 1.6,
-        startAt: { scale: '1.1' },
+        startAt: { scale: '1', height: 0 },
         ease: 'power3.inOut',
-        scale: 1,
+        scale: 1.1,
+        height: '101vh',
       },
       'start'
     )

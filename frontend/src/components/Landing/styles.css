@@ -28,6 +28,9 @@
     opacity: 0;
 
 }
+.hero-header .line{
+    overflow: hidden;
+}
 .pillar-box{
     position: relative;
     cursor:pointer;

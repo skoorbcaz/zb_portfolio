@@ -1,16 +1,16 @@
 import * as React from 'react'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
-import { Portfolio } from '../components/Portfolio'
+import { PortfolioDetails } from '../components/PortfolioDetails'
 
 const PortfolioPage = () => {
   return (
     <Layout>
-      <Portfolio />
+      <PortfolioDetails />
     </Layout>
   )
 }
 
-export const Head = () => <Seo title='Engineering & Design Portfolio' />
+export const Head = () => <Seo title='Gravitate GO Case Study' />
 
 export default PortfolioPage
