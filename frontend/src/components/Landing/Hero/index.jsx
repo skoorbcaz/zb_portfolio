@@ -61,7 +61,7 @@ export const Hero = () => {
     </Grid>
   )
 }
-const PillarBox = ({ title, backgroundClass }) => {
+export const PillarBox = ({ title, backgroundClass }) => {
   return (
     <GridItem
       colSpan={2}

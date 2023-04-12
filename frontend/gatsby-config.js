@@ -41,8 +41,9 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `assistant\:300,400,500,600,700`,
+          `raleway\:300,400,500,600,700`,
           `source sans pro\:300,400,400i,700`, // you can also specify font weights and styles
+          'share tech mono:400',
         ],
         display: 'swap',
       },
@@ -75,12 +76,12 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#212529`,
+        background_color: `#343A40`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/zb-icon.png`, // This path is relative to the root of the site.
       },
     },
   ],

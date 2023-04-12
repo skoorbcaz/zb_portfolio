@@ -7,8 +7,8 @@ const theme = {
     },
   },
   fonts: {
-    heading: `'YuMincho', sans-serif`,
-    body: `'Assistant', sans-serif`,
+    heading: `Raleway, sans-serif`,
+    body: `'Avenir', sans-serif`,
   },
   config: {
     initialColorMode: 'dark',

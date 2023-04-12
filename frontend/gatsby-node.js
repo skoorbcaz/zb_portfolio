@@ -10,9 +10,26 @@
 exports.createPages = async ({ actions }) => {
   const { createPage } = actions
   createPage({
-    path: "/using-dsg",
-    component: require.resolve("./src/templates/using-dsg.js"),
+    path: '/using-dsg',
+    component: require.resolve('./src/templates/using-dsg.js'),
     context: {},
     defer: true,
+  })
+}
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    module: {
+      rules: [
+        {
+          test: /\.(glb|gltf|hdr)$/i,
+          use: {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+            },
+          },
+        },
+      ],
+    },
   })
 }
