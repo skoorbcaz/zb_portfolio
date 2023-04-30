@@ -26,11 +26,11 @@ export const setupAnimation = () => {
 
   // GSAP Scroll Triggers
   const scroll = () => {
+    addStickyHeaderAnimation(DOM)
     addPortfolioPreviewAnimation(DOM)
     addTextAnimation(DOM)
     addPinnedBoxAnimation(DOM)
     addTrackAnimation(DOM)
-    animateBlogPreview(DOM)
     setupDevIntroAnimation()
   }
 
@@ -42,6 +42,18 @@ export const setupAnimation = () => {
     // GSAP Scroll Triggers
     scroll()
   })
+}
+const addStickyHeaderAnimation = (DOM) => {
+  gsap.fromTo(
+    DOM.stickyHeader,
+    { top: -200 },
+    {
+      top: 0,
+      ease: 'power4.out',
+      duration: 1,
+      scrollTrigger: { start: 'bottom bottom', end: 'bottom top', scrub: true, trigger: DOM.sections.columns },
+    }
+  )
 }
 const setupDevIntroAnimation = () => {
   const devDOM = {
@@ -191,54 +203,7 @@ const setupDevIntroAnimation = () => {
     }
   })
 }
-const animateBlogPreview = (DOM) => {
-  gsap.fromTo(
-    DOM.fullBlogImage,
-    {
-      width: '100vw',
-      borderRadius: 0,
-      clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-    },
-    {
-      width: '50vw',
-      borderRadius: '3%',
-      duration: 0.15,
 
-      height: '83vh',
-      top: '12vh',
-      left: '10%',
-      clipPath: 'url(#clipping)',
-      ease: 'expo',
-      scrollTrigger: {
-        pin: true,
-        start: 'top top',
-        end: 'bottom top',
-        scrub: true, // link the image fade to the scroll
-        trigger: DOM.landingBlogSection,
-      },
-    }
-  )
-
-  gsap.fromTo(
-    DOM.blogRightColumn,
-    {
-      width: 0,
-      right: 0,
-    },
-    {
-      width: '30vw',
-      right: '5%',
-      duration: 0.15,
-      ease: 'expo',
-      scrollTrigger: {
-        start: 'top top',
-        end: 'bottom top',
-        scrub: true, // link the image fade to the scroll
-        trigger: DOM.landingBlogSection,
-      },
-    }
-  )
-}
 const preloadImages = (selector = 'img') => {
   return new Promise((resolve) => {
     imagesLoaded(document.querySelectorAll(selector), { background: true }, resolve)
@@ -263,6 +228,8 @@ const getDOMElements = () => {
     landingBlogSection: document.querySelector('.landing-blog-section'),
     blogRightColumn: document.querySelector('.blog-right-column'),
     blogRightInners: document.querySelectorAll('.blog-right-column__inner'),
+    blogItemReveals: document.querySelectorAll('.blog-item-reveal'),
+    stickyHeader: document.querySelector('#sticky-header'),
   }
 }
 const addTrackAnimation = (DOM) => {

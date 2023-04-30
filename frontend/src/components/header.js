@@ -6,16 +6,17 @@ import Marquee from 'react-fast-marquee'
 
 const Header = ({ siteTitle }) => (
   <Box
+    id='sticky-header'
     p={4}
     style={{
       position: 'fixed',
       zIndex: 101,
-
+      top: -200,
       transition: '2s ease',
     }}
     width='100vw'
   >
-    <Flex style={{ borderRadius: 30, transition: '2s ease' }} bg='#2E2E2E' className='brand-square'>
+    <Flex style={{ borderRadius: 30, transition: '2s ease' }} className='brand-square nav-bg'>
       <Flex alignItems='center' spacing={6}>
         <Center mt={2} mx={3}>
           <div className='hamburger hamburger--spin'>

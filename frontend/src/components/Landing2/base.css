@@ -23,7 +23,10 @@ body{
     --rotation: -45deg;
     --offset: 20vh;
 }
-
+.nav-bg{
+    background:#2d37487d;
+    backdrop-filter: blur(10px);
+}
 
 
 
@@ -233,8 +236,25 @@ body{
     height: 100%;
     object-fit: cover;
 }
+.panel-wide .port-logo{
+    position: absolute;
+    z-index: 100;
+    bottom: 5%;
+    right: 5%;
+    width: 200px;
+    height: auto;
+
+    object-fit: contain;
+}
 .half-height .track-flex {
     gap: 2rem;
+}
+.blog-avatar{
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-size: cover;
 }
 :root {
     --color-text: var(--chakra-colors-gray-800);
@@ -259,7 +279,8 @@ body{
     overflow: hidden;
     gap: var(--gap);
     width: 100%;
-    min-height: 100vh;
+    min-height: 70vh;
+    padding-bottom: 15vh;
     font-family: system-ui, sans-serif;
     font-size: 1rem;
     line-height: 1.5;
@@ -323,22 +344,19 @@ body{
 }
 
 /* Element styles */
-.marquee svg {
+.marquee-logo-wrapper{
     display: grid;
     place-items: center;
-    width: var(--size);
-    fill: var(--chakra-colors-gray-700);
+    width:350px;
+    height:200px;
     background: var(--color-bg-accent);
-    aspect-ratio: 16/9;
     padding: calc(var(--size) / 10);
     border-radius: 0.5rem;
 }
-
-.marquee--vertical svg {
-    aspect-ratio: 1;
-    width: calc(var(--size) / 1.5);
-    padding: calc(var(--size) / 6);
+.marquee img {
+max-height:100px;
 }
+
 
 /* Parent wrapper */
 .wrapper {
