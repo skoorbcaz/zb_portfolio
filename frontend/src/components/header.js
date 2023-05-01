@@ -4,14 +4,14 @@ import { Icon } from '@chakra-ui/icons'
 import { AiFillDribbbleCircle, AiFillLinkedin, BsBehance, TbMenu } from 'react-icons/all'
 import Marquee from 'react-fast-marquee'
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, shouldRevealHeader }) => (
   <Box
     id='sticky-header'
     p={4}
     style={{
       position: 'fixed',
       zIndex: 101,
-      top: -200,
+      top: shouldRevealHeader ? -200 : 0,
       transition: '2s ease',
     }}
     width='100vw'

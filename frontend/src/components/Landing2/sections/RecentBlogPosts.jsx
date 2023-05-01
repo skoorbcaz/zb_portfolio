@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box, Flex, Heading, Text, Image, Link } from '@chakra-ui/react'
 import img1 from '../../../images/portfolioslides/gravitate.png'
+import { gsap } from 'gsap'
 import { HiArrowLongLeft, HiArrowLongRight } from 'react-icons/all'
 
 import image1 from '../../../images/blog-images/1.jpg'
@@ -12,6 +13,7 @@ import image6 from '../../../images/blog-images/6.jpg'
 import image7 from '../../../images/blog-images/7.jpg'
 import image8 from '../../../images/blog-images/8.jpg'
 import image9 from '../../../images/blog-images/9.jpg'
+import { ArrowForwardIcon } from '@chakra-ui/icons'
 
 const srces = [image1, image4, image2, image3, image5, image6, image7, image8, image9]
 
@@ -26,19 +28,47 @@ function BlogMasonry() {
           <Image key={src} w='100%' borderRadius='xl' mb={2} d='inline-block' src={src} alt='Alt' />
         ))}
       </Box>
-      <Link
-        pb={100}
-        href='/blog'
-        color='white'
-        fontSize='xl'
-        fontWeight='bold'
-        mt={10}
-        display='block'
-        textAlign='center'
-      >
-        DISCOVER MORE
-      </Link>
+      <MagneticCTA />
     </>
+  )
+}
+const MagneticCTA = () => {
+  const [isMounted, setIsMounted] = useState(false)
+  useEffect(() => {
+    if (!isMounted) {
+      const magnets = document.querySelectorAll('.magnetic')
+      const strength = 50
+
+      magnets.forEach((magnet) => {
+        magnet.addEventListener('mousemove', moveMagnet)
+        magnet.addEventListener('mouseout', function (event) {
+          gsap.to(event.currentTarget, 1, { x: 0, y: 0, ease: 'power4.out' })
+        })
+      })
+
+      function moveMagnet(event) {
+        const magnetButton = event.currentTarget
+        const bounding = magnetButton.getBoundingClientRect()
+
+        gsap.to(magnetButton, 1, {
+          x: ((event.clientX - bounding.left) / magnetButton.offsetWidth - 0.5) * strength,
+          y: ((event.clientY - bounding.top) / magnetButton.offsetHeight - 0.5) * strength,
+          ease: 'power4.out',
+        })
+
+        setIsMounted(true)
+      }
+    }
+  }, [])
+  return (
+    <Flex justifyContent='center' alignItems='center' height='40vh'>
+      <div className='magnetic'>
+        <button href='#' className='magnet-button my-button'>
+          discover more
+          <ArrowForwardIcon style={{ marginLeft: '0.5em' }} />
+        </button>
+      </div>
+    </Flex>
   )
 }
 
@@ -57,7 +87,7 @@ export const RecentBlogPosts = () => {
               backgroundSize: 'cover',
               borderRadius: 5,
               position: 'absolute',
-              height: '80%',
+              height: '80vh',
               width: '100%',
               objectFit: 'cover',
               objectPosition: '100% 0',

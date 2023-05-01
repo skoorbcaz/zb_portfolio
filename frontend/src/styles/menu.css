@@ -210,7 +210,7 @@
 }
 
 .menu {
-  position: absolute;
+  position: fixed;
   top: 80px;
   left: 0;
   right: 0;

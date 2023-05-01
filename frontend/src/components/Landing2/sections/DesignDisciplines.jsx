@@ -35,22 +35,22 @@ export const DesignDisciplines = () => {
     {
       colorScheme: 'pink',
       title: 'user interface design',
-      body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      body: 'I believe that user interface design is critical for software success because it ensures that software is both visually appealing and easy to navigate. By designing a user-friendly UI, software can meet the needs of its users and improve overall customer satisfaction.',
     },
     {
       colorScheme: 'green',
       title: 'logo design',
-      body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      body: 'I believe that a well-designed logo can give software a competitive edge, conveying a sense of trust and professionalism to its target audience. By investing in logo design, software can stand out in a crowded market and establish itself as a leader in its industry.',
     },
     {
       colorScheme: 'purple',
       title: 'branding assets',
-      body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      body: 'I believe that optimizing branding assets can help software create a visual language that resonates with its target audience, making it more memorable and relatable. By investing in branding assets such as color schemes, fonts, and graphics, software can communicate its personality and values, strengthening its brand identity.',
     },
     {
       colorScheme: 'yellow',
       title: 'information architecture',
-      body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      body: 'I believe that optimizing information architecture is valuable because it can improve software usability and efficiency, reducing user frustration and increasing customer satisfaction. By organizing content and functionality in a way that is easy for users to understand and navigate, software can enhance the overall user experience.',
     },
   ]
   const container = {
@@ -395,7 +395,7 @@ const AccordionCarousel = ({ duration = 5000, items = [], onChange }) => {
                 <MotionBox
                   height={0.5}
                   width='0%'
-                  bg='brand.500'
+                  bg='gray.600'
                   rounded='full'
                   variants={variants}
                   // animate={idx === active ? "animate" : "init"}

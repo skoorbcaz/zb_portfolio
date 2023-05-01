@@ -5,7 +5,7 @@ import { Portfolio } from '../components/Portfolio'
 
 const PortfolioPage = () => {
   return (
-    <Layout>
+    <Layout shouldRevealHeader={false}>
       <Portfolio />
     </Layout>
   )

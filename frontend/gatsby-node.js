@@ -21,7 +21,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     module: {
       rules: [
         {
-          test: /\.(glb|gltf|hdr)$/i,
+          test: /\.(glb|gltf|hdr|mov)$/i,
           use: {
             loader: 'url-loader',
             options: {

@@ -14,7 +14,7 @@ import Header from './header'
 import { gsap } from 'gsap'
 import { useLayoutEffect } from 'react'
 
-function Layout({ children }) {
+function Layout({ children, shouldRevealHeader = true }) {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -30,7 +30,7 @@ function Layout({ children }) {
   }, [])
   return (
     <>
-      <Header />
+      <Header shouldRevealHeader={shouldRevealHeader} />
       <Box>{children}</Box>
 
       <div className='menu'>

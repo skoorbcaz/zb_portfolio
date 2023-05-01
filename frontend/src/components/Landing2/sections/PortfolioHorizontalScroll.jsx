@@ -11,10 +11,10 @@ export const PortfolioHorizontalScroll = () => {
   return (
     <section className='sticky-element half-height'>
       <Box pl={100}>
-        <Heading color='gray.500' fontWeight={500} size='xl' className='section__heading'>
+        <Heading color='gray.500' fontWeight={500} fontSize='3vw' className='section__heading'>
           recent
         </Heading>
-        <Heading size='4xl' className='section__subheading'>
+        <Heading fontSize='6vw' className='section__subheading'>
           work
         </Heading>
       </Box>
