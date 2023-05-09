@@ -14,13 +14,13 @@ const theme = {
       500: '#A0AEC0',
       600: '#718096',
       700: '#3f3f40',
-      800: '#292929',
+      800: '#1e1e1e',
       900: '#141414',
     },
   },
   fonts: {
     heading: `Raleway, sans-serif`,
-    body: `'Avenir', sans-serif`,
+    body: `'Avenir Next', sans-serif`,
   },
   config: {
     initialColorMode: 'dark',

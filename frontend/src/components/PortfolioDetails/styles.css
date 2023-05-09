@@ -14,21 +14,18 @@
     pointer-events: auto;
 }
 
-.inner {
-    max-width: 80vw;
-    padding: 0 3em;
-    margin: 0 auto;
-}
+
 
 .content__header {
     display: flex;
     flex-direction: column;
     padding-top: 10rem;
+
 }
 
 .content__meta {
     position: relative;
-    font-size: 0.85rem;
+
     width: 320px;
 }
 
@@ -51,7 +48,7 @@
     line-height: 1;
     font-family: nocturne-serif, serif;
     font-weight: 600;
-    font-size: clamp(1.5rem, 10vw, 8rem);
+
 }
 
 .js .anim-block-wrap {
